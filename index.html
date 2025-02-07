@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alocação de Horários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar shadow-sm">
+        <div class="container">
+            <div class="navbar-content">
+                <h1 class="navbar-brand mb-0">Alocação de Horários</h1>
+                <p class="navbar-description mb-0">Otimize sua grade horária usando algoritmo Knapsack</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Adicionar Disciplina</h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" id="disciplina" class="form-control" placeholder="Nome da Disciplina">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" id="creditos" class="form-control" placeholder="Créditos" min="2" max="6">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" id="interesse" class="form-control" placeholder="Interesse (1-10)" min="1" max="10">
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dias e Horários</h5>
+                                        <div class="row g-3">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Dias da Semana</label>
+                                                <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                                                    <input type="checkbox" class="btn-check" name="dia" id="seg" value="SEG">
+                                                    <label class="btn btn-outline-primary" for="seg">Segunda</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="dia" id="ter" value="TER">
+                                                    <label class="btn btn-outline-primary" for="ter">Terça</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="dia" id="qua" value="QUA">
+                                                    <label class="btn btn-outline-primary" for="qua">Quarta</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="dia" id="qui" value="QUI">
+                                                    <label class="btn btn-outline-primary" for="qui">Quinta</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="dia" id="sex" value="SEX">
+                                                    <label class="btn btn-outline-primary" for="sex">Sexta</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label">Horários Manhã</label>
+                                                <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                                                    <input type="checkbox" class="btn-check" name="horario" id="m1" value="M1">
+                                                    <label class="btn btn-outline-info" for="m1">M1</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="m2" value="M2">
+                                                    <label class="btn btn-outline-info" for="m2">M2</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="m3" value="M3">
+                                                    <label class="btn btn-outline-info" for="m3">M3</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="m4" value="M4">
+                                                    <label class="btn btn-outline-info" for="m4">M4</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="m5" value="M5">
+                                                    <label class="btn btn-outline-info" for="m5">M5</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label">Horários Tarde</label>
+                                                <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                                                    <input type="checkbox" class="btn-check" name="horario" id="t1" value="T1">
+                                                    <label class="btn btn-outline-warning" for="t1">T1</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="t2" value="T2">
+                                                    <label class="btn btn-outline-warning" for="t2">T2</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="t3" value="T3">
+                                                    <label class="btn btn-outline-warning" for="t3">T3</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="t4" value="T4">
+                                                    <label class="btn btn-outline-warning" for="t4">T4</label>
+                                                    
+                                                    <input type="checkbox" class="btn-check" name="horario" id="t5" value="T5">
+                                                    <label class="btn btn-outline-warning" for="t5">T5</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button id="adicionar" class="btn btn-primary">
+                                <i class="bi bi-plus-circle me-2"></i>Adicionar Disciplina
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Preferências</h2>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label class="form-label">Estratégia de Otimização</label>
+                                <select id="optimization-strategy" class="form-select">
+                                    <option value="credits">Maximizar Créditos</option>
+                                    <option value="interest">Maximizar Interesse</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Máximo de Créditos</label>
+                                <input type="number" id="max-creditos" class="form-control" min="16" max="32" value="24">
+                            </div>
+                            <div class="col-md-4">
+                                <button id="gerar" class="btn btn-success w-100">
+                                    <i class="bi bi-lightning-charge me-2"></i>Gerar Grade Otimizada
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">Disciplinas Disponíveis</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="lista-disciplinas" class="list-group list-group-flush"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0">Grade Otimizada</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="grade-resultado" class="list-group list-group-flush mb-3"></div>
+                        <div id="sumario" class="alert alert-info mb-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
