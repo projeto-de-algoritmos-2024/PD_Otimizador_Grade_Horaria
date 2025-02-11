@@ -1,45 +1,45 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Trabalho
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 25<br>
+**Conteúdo da Disciplina**: PD<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
 
-## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+| Matrícula  | Aluno                               |
+| ---------- | ----------------------------------- |
+| 21/1030649 | Yan Werlley de Freitas Paulo |
+| 21/1030881 | Samuel Gomes de Souza         |
+
+## Apresentação
+
+A apresentação pode ser vista [aqui]().
+
+## Sobre
+
+Este projeto consiste na realização de um projeto de Alocação de Horários utilizando o Knapsack PD.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
 
-## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+![Tela inicial](images/image1.png)
+![Resultado](images/image2.png)
 
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+## Instalação
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+**Linguagem**: Html/Css e Javascript <br>
 
+Não é necessário instalação local. O projeto está hospedado no GitHub Pages e pode ser acessado diretamente pelo navegador.
 
+**Acesso online**:
+1. Abra seu navegador web preferido (Chrome, Firefox, Safari, etc)
+2. Acesse o link: [https://projeto-de-algoritmos-2024.github.io/PD_Otimizador_Grade_Horaria/](https://projeto-de-algoritmos-2024.github.io/PD_Otimizador_Grade_Horaria/)
 
+**Execução local (opcional)**:
+1. Clone o repositório:
+```bash
+git clone https://github.com/projeto-de-algoritmos-2024/PD_Otimizador_Grade_Horaria.git
+```
+2. Abra o arquivo `index.html` em seu navegador
 
+## Uso
+
+Acesse a aplicação acessando o link: https://projeto-de-algoritmos-2024.github.io/PD_Otimizador_Grade_Horaria/
