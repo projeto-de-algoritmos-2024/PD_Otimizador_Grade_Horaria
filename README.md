@@ -12,7 +12,7 @@
 
 ## Apresentação
 
-A apresentação pode ser vista [aqui]().
+A apresentação pode ser vista [aqui](https://youtu.be/A7Kaoqr-JR4?si=j_RVjbe-Usk80zEd).
 
 ## Sobre
 
@@ -21,7 +21,8 @@ Este projeto consiste na realização de um projeto de Alocação de Horários u
 ## Screenshots
 
 ![Tela inicial](images/image1.png)
-![Resultado](images/image2.png)
+![Adicionando](images/image2.png)
+![Resultado](images/image3.png)
 
 ## Instalação
 
